@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { Carousel, initTE } from 'tw-elements';
 import { FaArrowRight } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
-import aboutImg from '../assets/islam2.jpg';
-import contactImg from '../assets/islam.webp';
-import heroImg from '../assets/hero.avif';
+import islam1 from '../assets/islam.webp';
+import islam2 from '../assets/islam2.jpg';
+import islam3 from '../assets/hero.avif';
 
 const Banner = () => {
   useEffect(() => {
@@ -68,9 +68,9 @@ const Banner = () => {
       data-te-carousel-item
       data-te-carousel-active>
       <img
-        src="src/assets/islam.webp"
+        src={islam3}
         className="block w-full h-[500px]"
-        alt="Motorbike Smoke" />
+        alt="Islam" />
       <div
         className="absolute  text-white inset-x-[15%] bottom-5 hidden py-5 text-center md:block">
         <h5 className="text-4xl">First slide label</h5>
@@ -84,9 +84,9 @@ const Banner = () => {
       data-te-carousel-fade
       data-te-carousel-item>
       <img
-        src="src/assets/islam2.jpg"
+        src={islam1}
         className="block w-full h-[500px]"
-        alt="Mountaintop" />
+        alt="Islam" />
       <div
         className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
         <h5 className="text-4xl">Second slide label</h5>
@@ -100,9 +100,9 @@ const Banner = () => {
       data-te-carousel-fade
       data-te-carousel-item>
       <img
-        src="src/assets/hero.avif"
+        src={islam2}
         className="block w-full h-[500px]"
-        alt="Woman Reading a Book" />
+        alt="Islam" />
       <div
         className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
         <h5 className="text-4xl">Third slide label</h5>

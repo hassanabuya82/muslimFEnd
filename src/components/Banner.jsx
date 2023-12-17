@@ -2,8 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { FaArrowRight } from "react-icons/fa6";
+import { useSelector } from 'react-redux';
 
-const Banner = () => {
+
+const user = useSelector((state) => state.user.user);
+  console.log(user);
+
+  const Banner = () => {
   return (
     <div className=' bg-black px-4 py-32 mx-auto flex items-center justify-center'>
         <div className='text-white text-center'>

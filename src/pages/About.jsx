@@ -1,5 +1,5 @@
 import React from 'react'
-import aboutImg from "../assets/about.png"
+import aboutImg from "../assets/usthadhHussein.jpg"
 import UserImage from "../assets/user_image.png"
 
 const About = () => {
@@ -15,7 +15,7 @@ const About = () => {
         {/* top content */}
         <div className='flex flex-col md:flex-row justify-between items-center gap-12'>
           <div className='md:w-1/2'>
-            <img src={aboutImg} alt="" className='w-full' />
+            <img src={aboutImg} alt="" className='w-full rounded-md' />
           </div>
           <div className='md:w-1/2'>
             <h5 className='text-orange-500 text-xl font-medium mb-4'>Top Author</h5>

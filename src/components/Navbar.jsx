@@ -16,7 +16,7 @@ const Navbar = () => {
 
     // navItems
     const navItems = [
-        { path: "/", link: "Home" },
+        // { path: "/", link: "Home" },
         // { path: "/services", link: "Services" },
         { path: "/about", link: "About" },
         { path: "/blogs", link: "Blogs" },
@@ -44,7 +44,8 @@ const Navbar = () => {
                 {/* navitems */}
                 <ul className="md:flex gap-12 text-lg hidden ">
                     {
-                        navItems.map(({ link, path }) => <li className="text-white" key={path}>
+                        navItems.map(({ link, path }) => 
+                        <li className="text-white" key={path}>
                             <NavLink to={path} className={({ isActive, isPending }) =>
                                 isActive
                                     ? "active"

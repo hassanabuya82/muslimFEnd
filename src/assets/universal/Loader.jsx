@@ -187,7 +187,7 @@ return (
      {
       array_count.map(x=>
           
-          <div className="w-full lg:w-1/4 p-2">
+          <div className="w-full lg:w-1/4 p-2" key={x}>
           <CardBlockLoader />
       </div>
           )

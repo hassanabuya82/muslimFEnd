@@ -5,8 +5,8 @@ import { FaArrowRight } from "react-icons/fa6";
 import { useSelector } from 'react-redux';
 
 
-const user = useSelector((state) => state.user.user);
-  console.log(user);
+// const user = useSelector((state) => state.user.user);
+//   console.log(user);
 
   const Banner = () => {
   return (

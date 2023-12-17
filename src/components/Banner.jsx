@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import islam1 from '../assets/islam.webp';
 import islam2 from '../assets/islam2.jpg';
 import islam3 from '../assets/hero.avif';
+import islam4 from '../assets/islam4.jpg'
+import islam5 from '../assets/islam5.jpg'
+import islam6 from '../assets/islam6.jpg'
 
 const Banner = () => {
   useEffect(() => {
@@ -54,14 +57,14 @@ const Banner = () => {
       data-te-carousel-item
       data-te-carousel-active>
       <img
-        src={islam3}
+        src={islam5}
         className="block w-full lg:h-[700px] h-auto"
         alt="Islam" />
       <div
         className="absolute  text-white inset-x-[15%] bottom-5  py-5 text-center md:block">
-        <h5 className="text-4xl">First slide label</h5>
+        <h5 className="text-4xl">Look at them with</h5>
         <p>
-          Some representative placeholder content for the first slide.
+        outmost respect you will receive from Allah the secret of intense live.
         </p>
       </div>
     </div>
@@ -70,14 +73,16 @@ const Banner = () => {
       data-te-carousel-fade
       data-te-carousel-item>
       <img
-        src={islam1}
+        src={islam4}
         className="block w-full lg:h-[700px] h-auto"
         alt="Islam" />
       <div
         className="absolute inset-x-[15%] bottom-5  py-5 text-center text-white md:block">
-        <h5 className="text-4xl">Second slide label</h5>
+        <h5 className="text-4xl">
+          {/* title */}
+        </h5>
         <p>
-          Some representative placeholder content for the second slide.
+          {/* paragraph */}
         </p>
       </div>
     </div>
@@ -86,14 +91,16 @@ const Banner = () => {
       data-te-carousel-fade
       data-te-carousel-item>
       <img
-        src={islam2}
+        src={islam6}
         className="block w-full lg:h-[700px] h-auto"
         alt="Islam" />
       <div
         className="absolute inset-x-[15%] bottom-5  py-5 text-center text-white md:block">
-        <h5 className="text-4xl">Third slide label</h5>
+        <h5 className="text-4xl">
+          {/* Title */}
+        </h5>
         <p>
-          Some representative placeholder content for the third slide.
+          {/* paragraph */}
         </p>
       </div>
     </div>

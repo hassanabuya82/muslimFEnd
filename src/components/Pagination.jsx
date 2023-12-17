@@ -13,6 +13,8 @@ const Pagination = ({ currentPage, onPageChange, totalPages, pageSize }) => {
     };
 
     return (
+        <>
+        
         <ul className="pagination my-8 flex-wrap gap-4">
             <li>
                 <button onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1} className={`border p-3 border-orange-300 rounded-md ${currentPage === 1 ?'' : 'hover:bg-orange-600 hover:text-white hover:font-bold'} `}>Previous</button>
@@ -24,6 +26,8 @@ const Pagination = ({ currentPage, onPageChange, totalPages, pageSize }) => {
                 <button onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === alltotalPages} className={`border p-3 border-orange-300 rounded-md ${currentPage === alltotalPages ?'' : 'hover:bg-orange-600 hover:text-white hover:font-bold'} `}>Next</button>
             </li>
         </ul>
+        {/* <div className="justify-center">{alltotalPages} Pages</div> */}
+        </>
     );
 };
             

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { fetchingCategories } from "../api/blogs";
-import { GrayLoaderMini } from "../assets/universal/Loader";
 import { useQuery } from "react-query";
+import { GrayLoaderMini } from "../universal/Loader";
 
 const CategorySelection = ({ onSelectCategory, activeCategory }) => {
 

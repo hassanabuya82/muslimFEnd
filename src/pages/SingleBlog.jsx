@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useLoaderData, useParams } from 'react-router-dom'
-import { FaUser } from "react-icons/fa";
-import { FaClock } from 'react-icons/fa6';
+import React, {  useState } from 'react'
+import {  useParams } from 'react-router-dom'
 import Sidebar from '../components/Sidebar';
 import { useMutation, useQuery } from 'react-query';
 import { addingComments, fetchBlogDetail } from '../api/blogs';
-import { GrayLoaderBlock, GrayLoaderMini } from '../assets/universal/Loader';
 import moment from 'moment';
 
 import UserImage from "../assets/user_image.png"
-import { errorToast, successToast } from '../assets/universal/toastify';
+import { errorToast, successToast } from '../universal/toastify';
+import { GrayLoaderBlock, GrayLoaderMini } from '../universal/Loader';
 
 const SingleBlog = () => {
   const params = useParams();
@@ -63,8 +61,8 @@ const SingleBlog = () => {
                     <h1 className='text-5xl leading-snug font-bold mb-5'>Single Blog</h1>
                 </div>
 
-            <div className='max-w-7xl my-12 flex flex-col md:flex-row gap-12'>
-<div className="my-4 lg:ml-6 mx-3 border rounded-md w-2/3">
+            <div className='max-w-7xl mx-5  my-12 flex flex-col md:flex-row gap-12 '>
+<div className="my-4 lg:ml-6 lg:mx-3  border rounded-md w-full lg:w-2/3">
     <div className="bg-white rounded-lg shadow-md">
         <div className="p-4">
             <h2 className="text-2xl font-bold mb-2">{fetched_blog.data.title}</h2>
@@ -145,7 +143,7 @@ const SingleBlog = () => {
 
 
 
-    <div className='lg:w-1/2 lg:mx-auto mx-3 md:mx-0'>
+    <div className='lg:w-1/2 lg:mx-auto w-full mx-3 md:mx-0'>
         <Sidebar/>
     </div>
 </div>

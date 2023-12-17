@@ -78,3 +78,15 @@ export const addingContactUs = async (data) => {
   });
   return res.data;
 };
+
+
+export const addingContactEmail = async (data) => {
+  const token = get_token();
+  const res = await axios.post(`${api_url}blogs/contact_email/`, data, {
+    headers: {
+      Authorization: `Token ${token}`,
+    },
+  });
+  return res.data;
+};
+

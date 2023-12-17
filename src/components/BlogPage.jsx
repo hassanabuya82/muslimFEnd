@@ -4,11 +4,11 @@ import CategorySelection from "./CategorySelection";
 import Pagination from "./Pagination";
 import BlogCards from "./BlogCards";
 import Sidebar from "./Sidebar";
-import { FullPageCardLoader } from "../assets/universal/Loader";
 import { displayingMCQQuestions } from "../api/blogs";
 import { useQuery } from "react-query";
 import { FaUser } from "react-icons/fa";
 import moment from "moment";
+import { FullPageBlogCardLoader, FullPageCardLoader } from "../universal/Loader";
 
 const BlogPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -50,7 +50,7 @@ const BlogPage = () => {
 
             <div className="flex flex-col lg:flex-row gap-12 ml-5 pl-5 mr-3 pr-3">
             {blogsData.isLoading ? (
-            <FullPageCardLoader />
+            <FullPageBlogCardLoader />
           ) : (
             blogsData.data &&
     <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8'>

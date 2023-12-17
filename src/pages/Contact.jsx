@@ -1,9 +1,9 @@
 import { useState } from "react";
 import contactImg from "../assets/contact.png"
-import { GrayLoaderMini } from "../assets/universal/Loader";
-import { errorToast, successToast } from "../assets/universal/toastify";
 import { addingContactUs } from "../api/blogs";
 import { useMutation } from "react-query";
+import { errorToast, successToast } from "../universal/toastify";
+import { GrayLoaderMini } from "../universal/Loader";
 
 
 const Contact = () => {

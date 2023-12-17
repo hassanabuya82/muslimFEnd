@@ -13,23 +13,9 @@ const Banner = () => {
 
 
   return (
-    // <div className=' bg-black px-4 py-32 mx-auto flex items-center justify-center'>
-    //     <div className='text-white text-center'>
-    //         <h1 className='lg:text-7xl text-5xl leading-snug font-bold mb-5'>Welcome to Muslim Scholars</h1>
-    //         <p className='text-gray-100 lg:w-3/4 mx-auto mb-5'><p className='text-lg '>Our mission is to present a comprehensive and accurate account of Islamic history, covering major events, figures, and cultural heritage. Our aim is to provide a rich understanding of the religion and its impact on the world. However, if we have made any mistakes in regards to dates or names, we welcome feedback and corrections. We are dedicated to constantly improving and ensuring the authenticity of our information.
-    //           <br /> <br />
-    //           By doing so, we strive to provide a trustworthy resource for individuals seeking knowledge about Islamic history.</p></p>
-
-    //         {/* btn here */}
-    //         <div>
-    //             <Link to="/about" className='inline-flex items-center py-1 font-medium hover:text-orange-500'>Learn more <FaArrowRight className='mt-1 ml-2'/></Link>
-    //         </div>
-    //     </div>
-    // </div>
-   
 <div
   id="carouselDarkVariant"
-  className="relative mx-auto mt-[59px]"
+  className="relative mx-auto"
   data-te-carousel-init
   data-te-ride="carousel">
     
@@ -72,7 +58,7 @@ const Banner = () => {
         className="block w-full lg:h-[700px] h-auto"
         alt="Islam" />
       <div
-        className="absolute  text-white inset-x-[15%] bottom-5 hidden py-5 text-center md:block">
+        className="absolute  text-white inset-x-[15%] bottom-5  py-5 text-center md:block">
         <h5 className="text-4xl">First slide label</h5>
         <p>
           Some representative placeholder content for the first slide.
@@ -88,7 +74,7 @@ const Banner = () => {
         className="block w-full lg:h-[700px] h-auto"
         alt="Islam" />
       <div
-        className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+        className="absolute inset-x-[15%] bottom-5  py-5 text-center text-white md:block">
         <h5 className="text-4xl">Second slide label</h5>
         <p>
           Some representative placeholder content for the second slide.
@@ -104,7 +90,7 @@ const Banner = () => {
         className="block w-full lg:h-[700px] h-auto"
         alt="Islam" />
       <div
-        className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+        className="absolute inset-x-[15%] bottom-5  py-5 text-center text-white md:block">
         <h5 className="text-4xl">Third slide label</h5>
         <p>
           Some representative placeholder content for the third slide.

@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { fetchingLatestBlogs } from '../api/blogs';
 import { useQuery } from 'react-query';
-import { CardBlockLoader } from '../assets/universal/Loader';
+import { CardBlockLoader } from '../universal/Loader';
 
 const Sidebar = () => {
     

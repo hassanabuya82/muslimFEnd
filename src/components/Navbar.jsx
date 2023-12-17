@@ -1,116 +1,85 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-
-// react icons
-import { FaBars,  FaFacebook, FaInstagram, FaTwitter, FaXmark } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
+import { FaBars, FaXmark, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
 import Modal from "./Modal";
 
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    // const [isActive, setIsActive] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // menu btn toggle
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    }
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-    // navItems
-    const navItems = [
-        // { path: "/", link: "Home" },
-        // { path: "/services", link: "Services" },
-        { path: "/about", link: "About" },
-        { path: "/blogs", link: "Blogs" },
-        { path: "/contact", link: "Contact" },
-    ]
+  const navItems = [
+    { path: "/about", link: "About" },
+    { path: "/blogs", link: "Blogs" },
+    { path: "/contact", link: "Contact" },
+  ];
 
-    // for modal for login button
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const openModal = () => {
-      setIsModalOpen(true);
-    };
-  
-    const closeModal = () => {
-      setIsModalOpen(false);
-    };
-
-    return (
-        <header className="fixed bg-black top-0 left-0 right-0 text-white">
-            <nav className="px-4 max-w-7xl mx-auto flex justify-between items-center py-4">
-                <a href="/" className="text-xl font-bold text-white">
-                    Muslim<span className="text-orange-500">SCHOLARS</span>
-                </a>
-
-                {/* navitems */}
-                <ul className="md:flex gap-12 text-lg hidden ">
-                    {
-                        navItems.map(({ link, path }) => 
-                        <li className="text-white" key={path}>
-                            <NavLink to={path} className={({ isActive, isPending }) =>
-                                isActive
-                                    ? "active"
-                                    : isPending
-                                        ? "pending"
-                                        : ""
-                            }>{link}</NavLink>
-                        </li>)
-                    }
-                </ul>
-
-                {/* menu icons for large devices */}
-
-                {/* <div className="text-white lg:flex gap-4 items-center hidden">
-                    <a href="/" className="hover:text-orange-500"> <FaMeta /></a>
-                    <a href="/" className="hover:text-orange-500"><FaDribbble /></a>
-                    <a href="/" className="hover:text-orange-500"><FaTwitter /></a>
-                    <button onClick={openModal} className="bg-orange-500 px-6 py-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all ease-in duration-200 ml-4">Log in</button>
-                </div> */}
-                <div className="lg:flex items-center mt-4 space-x-4 sm:mt-0 hidden pr-5">
-                <a
-                  href="/"
-                  className="text-gray-500 transition-colors duration-300 hover:text-teal-accent-400"
+  return (
+    <header className="bg-gray-900 sticky top-0 z-50">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+        <div>
+          <a href="/" className="text-white text-3xl font-bold tracking-wide">
+            Muslim<span className="text-yellow-500">Scholars</span>
+          </a>
+        </div>
+        <div className="md:hidden">
+          <button onClick={toggleMenu} className="text-white">
+            {isMenuOpen ? (
+              <FaXmark className="w-8 h-8" />
+            ) : (
+              <FaBars className="w-8 h-8" />
+            )}
+          </button>
+        </div>
+        <div className="hidden md:flex items-center space-x-8">
+          <ul className={`flex ${isMenuOpen ? 'md:flex-col md:items-start md:space-y-4' : ''} space-x-8`}>
+            {navItems.map(({ path, link }) => (
+              <li key={path}>
+                <NavLink
+                  to={path}
+                  className="text-white hover:text-yellow-500 transition duration-300"
+                  activeClassName="font-bold"
+                  onClick={() => setIsMenuOpen(false)}
                 >
-                 <FaTwitter className='h-6 w-6'/>
-                </a>
-                <a
-                  href="/"
-                  className="text-gray-500 transition-colors duration-300 hover:text-teal-accent-400"
+                  {link}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+          <div className="flex items-center space-x-4 lg:ml-auto text-2xl">
+            <FaFacebook className="text-white hover:text-orange-300 cursor-pointer" />
+            <FaInstagram className="text-white hover:text-orange-300 cursor-pointer" />
+            <FaTwitter className="text-white hover:text-orange-300 cursor-pointer" />
+          </div>
+        </div>
+      </nav>
+      {isMenuOpen && (
+        <div className="md:hidden bg-gray-900 lg:hidden">
+          <ul className="py-4 text-white">
+            {navItems.map(({ path, link }) => (
+              <li key={path} className="py-2 pl-6">
+                <NavLink
+                  to={path}
+                  className="hover:text-yellow-500 transition duration-300"
+                  activeClassName="font-bold"
+                  onClick={() => setIsMenuOpen(false)}
                 >
-                  <FaInstagram className='h-6 w-6'/>
-                </a>
-                <a
-                  href="/"
-                  className="text-gray-500 transition-colors duration-300 hover:text-teal-accent-400"
-                >
-                  <FaFacebook className='h-6 w-6'/>
-                </a>
-              </div>
-                
-                {/* modal component */}
-                <Modal isOpen={isModalOpen} onClose={closeModal} />
-
-                {/* mobile menu */}
-                <div className="md:hidden">
-                    <button onClick={toggleMenu} className="cursor-pointer">
-                        {isMenuOpen ? <FaXmark className="w-5 h-5" /> : <FaBars className="w-5 h-5" />}
-                    </button>
-                </div>
-            </nav>
-
-            {/* moblie menu items only */}
-            <div className="">
-                <ul className={`md:hidden block space-y-4 px-4 py-6 mt-14 bg-white ${isMenuOpen ? "fixed top-0 left-0 w-full transition-all ease-out duration-150" : "hidden"}`}>
-                {
-                        navItems.map(({ link, path }) => <li className="text-black" key={path}>
-                            <NavLink onClick={toggleMenu} to={path} className={({ isActive, isPending }) =>
-                                isActive ? "active" : ""
-                            }>{link}</NavLink>
-                        </li>)
-                    }
-                </ul>
+                  {link}
+                </NavLink>
+              </li>
+            ))}
+            <div className="flex justify-center space-x-4 py-4 text-2xl">
+              <FaFacebook className="text-white hover:text-orange-300 cursor-pointer" />
+              <FaInstagram className="text-white hover:text-orange-300 cursor-pointer" />
+              <FaTwitter className="text-white hover:text-orange-300 cursor-pointer" />
             </div>
-        </header>
-    );
+          </ul>
+        </div>
+      )}
+    </header>
+  );
 };
 
 export default Navbar;

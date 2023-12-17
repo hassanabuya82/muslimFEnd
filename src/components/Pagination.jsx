@@ -1,33 +1,3 @@
-// const Pagination = ({ currentPage, onPageChange, blogs, pageSize }) => {
-//     console.log(blogs);
-//     const totalPages = Math.ceil(blogs.length / pageSize);
-//     console.log(totalPages);
-
-//     const renderPaginationLinks = () => {
-//         return Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
-//             <li key={pageNumber} className={pageNumber === currentPage ? "activePagination" : ""}>
-//                 <a href="#" onClick={() => onPageChange(pageNumber)}>{pageNumber}</a>
-//             </li>
-//         ));
-//     };
-
-//     return (
-//         <ul className="pagination my-8 flex-wrap gap-4">
-//             <li>
-//                 <button onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
-//             </li>
-
-//             <div className="flex gap-1">{renderPaginationLinks()}</div>
-
-//             <li>
-//                 <button onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === totalPages}>Next</button>
-//             </li>
-//         </ul>
-//     );
-// };
-
-// export default Pagination;
-
 
 
 const Pagination = ({ currentPage, onPageChange, totalPages, pageSize }) => {
@@ -45,13 +15,13 @@ const Pagination = ({ currentPage, onPageChange, totalPages, pageSize }) => {
     return (
         <ul className="pagination my-8 flex-wrap gap-4">
             <li>
-                <button onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
+                <button onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1} className={`border p-3 border-orange-300 rounded-md ${currentPage === 1 ?'' : 'hover:bg-orange-600 hover:text-white hover:font-bold'} `}>Previous</button>
             </li>
 
             <div className="flex gap-1">{renderPaginationLinks()}</div>
 
             <li>
-                <button onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === totalPages}>Next</button>
+                <button onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === alltotalPages} className={`border p-3 border-orange-300 rounded-md ${currentPage === alltotalPages ?'' : 'hover:bg-orange-600 hover:text-white hover:font-bold'} `}>Next</button>
             </li>
         </ul>
     );

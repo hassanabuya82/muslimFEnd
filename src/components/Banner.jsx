@@ -69,7 +69,7 @@ const Banner = () => {
       data-te-carousel-active>
       <img
         src={islam3}
-        className="block w-full h-[700px]"
+        className="block w-full lg:h-[700px] h-auto"
         alt="Islam" />
       <div
         className="absolute  text-white inset-x-[15%] bottom-5 hidden py-5 text-center md:block">
@@ -85,7 +85,7 @@ const Banner = () => {
       data-te-carousel-item>
       <img
         src={islam1}
-        className="block w-full h-[700px]"
+        className="block w-full lg:h-[700px] h-auto"
         alt="Islam" />
       <div
         className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
@@ -101,7 +101,7 @@ const Banner = () => {
       data-te-carousel-item>
       <img
         src={islam2}
-        className="block w-full h-[700px]"
+        className="block w-full lg:h-[700px] h-auto"
         alt="Islam" />
       <div
         className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">

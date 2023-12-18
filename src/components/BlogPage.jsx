@@ -58,6 +58,7 @@ const BlogPage = () => {
                 </div>
                 <h3 className="mt-4 mb-2 font-bold hover:text-blue-600 cursor-pointer">{blog.title}</h3>
                 <p className='mb-2'><span className="font-bold">Category: </span> {blog.category_name}</p>
+                <button className="mt-4 mb-2 font-bold hover:text-blue-600 cursor-pointer bg-blue-500 hover:bg-white text-white border p-2 rounded-md border-blue-500">Read More</button>
                 <p className='text-sm text-gray-500'>Published: {moment(blog.created_on).format("YYYY-MM-DD hh:mm A")}</p>
                 
                   <div className="flex flex-wrap items-center">

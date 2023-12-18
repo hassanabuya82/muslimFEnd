@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import CategorySelection from "./CategorySelection";
 import Pagination from "./Pagination";
-import BlogCards from "./BlogCards";
 import Sidebar from "./Sidebar";
 import { displayingMCQQuestions } from "../api/blogs";
 import { useQuery } from "react-query";
-import { FaUser } from "react-icons/fa";
 import moment from "moment";
 import { FullPageBlogCardLoader, FullPageCardLoader } from "../universal/Loader";
+import { FaHeart, FaRegComment, FaRegHeart } from "react-icons/fa6";
 
 const BlogPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -38,10 +37,6 @@ const BlogPage = () => {
     };
 
 
-    
-// const filteredBlogs = blogsData && blogsData.data ? blogsData.data.filter((blogs) => !selectedCategory || blogs.category === selectedCategory).slice((currentPage - 1) * pageSize, currentPage * pageSize) : null;
-// console.log(filteredBlogs);
-
     return (
         <div className="">
             <div>
@@ -64,6 +59,27 @@ const BlogPage = () => {
                 <h3 className="mt-4 mb-2 font-bold hover:text-blue-600 cursor-pointer">{blog.title}</h3>
                 <p className='mb-2'><span className="font-bold">Category: </span> {blog.category_name}</p>
                 <p className='text-sm text-gray-500'>Published: {moment(blog.created_on).format("YYYY-MM-DD hh:mm A")}</p>
+                
+                  <div className="flex flex-wrap items-center">
+                  <p className='text-gray-500 mt-3 text-3xl flex flex-wrap items-center mr-3'>
+                  <div>
+                    <FaRegHeart className="mr-2 text-red-500"/>  
+                  </div> 
+                  <div className="text-lg">
+                  {blog.like_count ? blog.like_count : 0}
+                  </div>
+                </p>
+                
+                <p className='text-gray-500 mt-3 text-3xl flex flex-wrap items-center'>
+                  <div>
+                    <FaRegComment className="mr-2"/>  
+                  </div> 
+                  <div className="text-lg">
+                    {blog.comment_count ? blog.comment_count : 0}
+                  </div>
+                </p>
+                  </div>
+
             </Link>
             </>
         ))  

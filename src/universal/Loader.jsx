@@ -3,7 +3,11 @@ export const GrayLoader = () => {
 };
 
 export const GrayLoaderMini = () => {
-  return <div className="spinner2 inline-flex  align-middle  mr-4 text-white"></div>;
+  return <div className="animate-spin h-5 w-5  inline-flex  align-middle  mr-4 "></div>;
+};
+
+export const SpinLoaderMini = () => {
+  return <div className="animate-spin h-5 w-5  inline-flex  align-middle  mr-4 "></div>;
 };
 
 export const FullPageLoader = () => {

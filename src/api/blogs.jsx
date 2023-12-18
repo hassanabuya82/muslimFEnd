@@ -69,6 +69,17 @@ export const addingComments = async (data) => {
 };
 
 
+export const addingLikes = async (data) => {
+  const token = get_token();
+  const res = await axios.post(`${api_url}likes/like/`, data, {
+    headers: {
+      Authorization: `Token ${token}`,
+    },
+  });
+  return res.data;
+};
+
+
 export const addingContactUs = async (data) => {
   const token = get_token();
   const res = await axios.post(`${api_url}blogs/contact_us/`, data, {

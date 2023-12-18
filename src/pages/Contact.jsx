@@ -9,8 +9,20 @@ import { GrayLoaderMini } from "../universal/Loader";
 const Contact = () => {
 
 
+  const initialFormState = {
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  };
   
-  const [contactObj, setContactObj] = useState({});
+  
+  const resetForm = () => {
+    setContactObj(initialFormState);
+  };
+  
+
+  const [contactObj, setContactObj] = useState(initialFormState);
 
   const inputChange = (e) => {
     const { name, value } = event.target;
@@ -21,7 +33,7 @@ const Contact = () => {
   const fullyAddingContact = useMutation(addingContactUs, {
     onSuccess: (res) => {
       successToast("Message Added Successfully");
-      window.location.reload();
+      resetForm()
     },
     onError: (error) => {
       errorToast("Opps! Something went Wrong");
@@ -69,6 +81,7 @@ const Contact = () => {
                 <input
                 onChange={inputChange}
                   type="text"
+                  value={contactObj.name}
                   name="name"
                   id="name"
                   placeholder="Full Name"
@@ -86,6 +99,7 @@ const Contact = () => {
                 onChange={inputChange}
                   type="email"
                   name="email"
+                  value={contactObj.email}
                   id="email"
                   placeholder="example@domain.com"
                   class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
@@ -101,6 +115,7 @@ const Contact = () => {
                 <input
                 onChange={inputChange}
                   type="text"
+                  value={contactObj.subject}
                   name="subject"
                   id="subject"
                   placeholder="Enter your subject"
@@ -117,6 +132,7 @@ const Contact = () => {
                 <textarea
                 onChange={inputChange}
                   rows="4"
+                  value={contactObj.message}
                   name="message"
                   id="message"
                   placeholder="Type your message"

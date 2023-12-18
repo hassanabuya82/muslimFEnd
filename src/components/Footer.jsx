@@ -8,8 +8,17 @@ import { GrayLoaderMini } from '../universal/Loader';
 const Footer = () => {
 
 
-  const [contactObj, setContactObj] = useState({});
-
+  
+  const initialFormState = {
+    email: '',
+  };
+  
+  
+  const resetForm = () => {
+    setContactObj(initialFormState);
+  };
+  
+  const [contactObj, setContactObj] = useState(initialFormState);
   const inputChange = (e) => {
     const { name, value } = event.target;
     setContactObj((prevState) => ({ ...prevState, [name]: value }));
@@ -19,8 +28,7 @@ const Footer = () => {
   const fullyAddingContactEmail = useMutation(addingContactEmail, {
     onSuccess: (res) => {
       successToast("You are now an official subscriber");
-      window.location.reload();
-      successToast("You are now an official subscriber");
+      resetForm()
     },
     onError: (error) => {
       errorToast("Opps! Something went Wrong");
@@ -60,6 +68,7 @@ const Footer = () => {
                     placeholder="Email"
                     required
                     type="text"
+                    value={contactObj.email}
                     name="email"
                     onChange={inputChange}
                     className="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"

@@ -7,13 +7,49 @@ import moment from 'moment';
 import UserImage from "../assets/user_image.png"
 import { errorToast, successToast } from '../universal/toastify';
 import { GrayLoaderBlock, GrayLoaderMini } from '../universal/Loader';
-import { FaRegComment, FaRegHeart } from 'react-icons/fa6';
+import { FaFacebook, FaLinkedin, FaRegComment, FaRegHeart, FaTwitter, FaWhatsapp } from 'react-icons/fa6';
 import { Helmet } from 'react-helmet';
+import { FaInstagramSquare, FaRegShareSquare, FaWhatsappSquare } from "react-icons/fa";
+
+
+
 
 const SingleBlog = () => {
   const params = useParams();
   const blogId = params.blogId;
+  const text = "Check this blog out";
 
+  const blogUrl = `https://muslim-psi.vercel.app/blogs/${blogId}`; // Replace with your actual blog URL
+
+  const shareOnFacebook = () => {
+    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(blogUrl)}`;
+    window.open(facebookShareUrl, '_blank');
+  };
+
+  const shareOnTwitter = () => {
+    const text = encodeURIComponent(blog.title); // Include blog title in tweet
+    const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(blogUrl)}&text=${text}`;
+    window.open(twitterShareUrl, '_blank');
+  };
+
+  const shareOnLinkedIn = () => {
+    const linkedInShareUrl = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(blogUrl)}`;
+    window.open(linkedInShareUrl, '_blank');
+  };
+
+  const shareOnInstagram = () => {
+    // Replace 'caption' and 'imageUrl' with your own caption and image URL
+    const instagramShareUrl = `https://www.instagram.com/create/?caption=${encodeURIComponent('Checkout this blog')}&url=${encodeURIComponent(blogUrl)}`;
+    window.open(instagramShareUrl, '_blank');
+  };
+  
+
+  const shareOnWhatsApp = () => {
+    const whatsappShareUrl = `https://wa.me/?text=${encodeURIComponent('Checkout this blog')} ${encodeURIComponent(blogUrl)}`;
+    window.open(whatsappShareUrl, '_blank');
+  };
+
+  
   const commentSectionRef = useRef(null);
 
   // Function to scroll to the comment section
@@ -63,6 +99,11 @@ const resetForm = () => {
   };
 
 
+  const [showAdditionalButtons, setShowAdditionalButtons] = useState(false);
+
+  const toggleButtons = () => {
+    setShowAdditionalButtons(!showAdditionalButtons);
+  };
   
 
 
@@ -161,10 +202,27 @@ const resetForm = () => {
                     {fetched_blog.data.comment_count ? fetched_blog.data.comment_count : 0}
                   </div>
                 </p>
+
+
+                <div>
+                <button onClick={toggleButtons} className='ml-4 text-3xl text-blue-500 mt-3 hover:text-red-500 '><FaRegShareSquare /></button>
+                </div>
+
+
                   </div>
 
+                  {showAdditionalButtons && 
+                    <div className='flex justify-between mt-4 w-2/3'>
+                      <button onClick={shareOnFacebook} className='text-4xl hover:text-red-500 border text-blue-500 p-3'><FaFacebook /></button>
+                      <button onClick={shareOnTwitter} className='text-4xl hover:text-red-500 border text-blue-500 p-3'><FaTwitter /></button>
+                      <button onClick={shareOnLinkedIn} className='text-4xl hover:text-red-500 border text-blue-500 p-3'><FaLinkedin/></button>
+                      <button onClick={shareOnInstagram} className='text-4xl hover:text-red-500 border text-red-400 p-3'><FaInstagramSquare/></button>
+                      <button onClick={shareOnWhatsApp} className='text-4xl hover:text-red-500 border text-green-400 p-3'><FaWhatsappSquare/></button>
+                    </div>
+                  }
 
-            <hr className='mt-14 mb-3'/>
+
+            <hr className='mt-6 mb-3'/>
             <p className="" dangerouslySetInnerHTML={{ __html: fetched_blog.data.content }} />    
         
         </div>

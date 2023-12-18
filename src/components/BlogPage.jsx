@@ -8,6 +8,7 @@ import { useQuery } from "react-query";
 import moment from "moment";
 import { FullPageBlogCardLoader, FullPageCardLoader } from "../universal/Loader";
 import { FaHeart, FaRegComment, FaRegHeart } from "react-icons/fa6";
+import { Helmet } from "react-helmet";
 
 const BlogPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -52,13 +53,17 @@ const BlogPage = () => {
         {
           blogsData.data.results.map((blog) => (
             <>
+            <Helmet>
+              <title>{blog.title}</title>
+              <meta name='description' content={blog.category_name}/>
+            </Helmet>
             <Link to={`/blogs/${blog.id}`} key={blog.id} className="block p-5 shadow-lg rounded cursor-pointer">
                 <div>
                     <img src={blog.image} alt="" className='w-full rounded-md'/>
                 </div>
                 <h3 className="mt-4 mb-2 font-bold hover:text-blue-600 cursor-pointer">{blog.title}</h3>
                 <p className='mb-2'><span className="font-bold">Category: </span> {blog.category_name}</p>
-                <button className="mt-4 mb-2 font-bold hover:text-blue-600 cursor-pointer bg-blue-500 hover:bg-white text-white border p-2 rounded-md border-blue-500">Read More</button>
+                <button className="mt-2 mb-2 font-bold hover:text-blue-600 cursor-pointer bg-blue-500 hover:bg-white text-white border p-2 rounded-md border-blue-500">Read More</button>
                 <p className='text-sm text-gray-500'>Published: {moment(blog.created_on).format("YYYY-MM-DD hh:mm A")}</p>
                 
                   <div className="flex flex-wrap items-center">

@@ -8,6 +8,7 @@ import islam9 from "../assets/islam9.jpg"
 import islam10 from "../assets/islam10.jpg"
 import islam11 from "../assets/islam11.jpg"
 import islam12 from "../assets/islam12.jpg"
+import { Helmet } from 'react-helmet'
 
 const About = () => {
 
@@ -33,6 +34,12 @@ const About = () => {
 
   return (
     <div className='text-white'>
+
+            <Helmet>
+              <title>About East African Muslim Scholars | Muslim Scholars</title>
+              <meta name='description' content='Muslim Scholars'/>
+            </Helmet>
+            
       <div className='py-40 bg-black text-center px-4'>
         <h1 className='lg:text-7xl text-5xl leading-snug font-bold mb-5'>About Us Page</h1>
       </div>

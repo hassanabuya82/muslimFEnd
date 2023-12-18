@@ -4,6 +4,7 @@ import { addingContactUs } from "../api/blogs";
 import { useMutation } from "react-query";
 import { errorToast, successToast } from "../universal/toastify";
 import { GrayLoaderMini } from "../universal/Loader";
+import { Helmet } from "react-helmet";
 
 
 const Contact = () => {
@@ -59,6 +60,10 @@ const Contact = () => {
 
   return (
     <div className='text-white'>
+      <Helmet>
+        <title>Contact East African Muslim Scholars | Muslim Scholars</title>
+        <meta name='description' content='Muslim Scholars'/>
+      </Helmet>
       <div className='py-40 bg-black text-center px-4'>
         <h1 className='lg:text-7xl text-5xl leading-snug font-bold mb-5'>Contact Us</h1>
       </div>

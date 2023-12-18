@@ -8,6 +8,7 @@ import UserImage from "../assets/user_image.png"
 import { errorToast, successToast } from '../universal/toastify';
 import { GrayLoaderBlock, GrayLoaderMini } from '../universal/Loader';
 import { FaRegComment, FaRegHeart } from 'react-icons/fa6';
+import { Helmet } from 'react-helmet';
 
 const SingleBlog = () => {
   const params = useParams();
@@ -101,6 +102,11 @@ const resetForm = () => {
           ) : (
             fetched_blog.data && 
                 <>
+                <Helmet>
+                <title>{fetched_blog.data.title}</title>
+                <meta name='description' content={dangerouslySetInnerHTML={ __html: fetched_blog.data.content.slice(0,100) }}/>
+                </Helmet>
+        
                 <div className='lg:py-36 bg-black text-white text-center px-4'>
                     <h1 className='text-5xl leading-snug font-bold mb-5'>Single Blog</h1>
                 </div>

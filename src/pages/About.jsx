@@ -1,6 +1,7 @@
 import React from 'react'
 import aboutImg from "../assets/usthadhHussein.jpg"
 import UserImage from "../assets/user_image.png"
+import islam3 from "../assets/islam3.jpg"
 import islam7 from "../assets/islam7.jpg"
 import islam8 from "../assets/islam8.jpg"
 import islam9 from "../assets/islam9.jpg"
@@ -14,7 +15,7 @@ const About = () => {
     {id:1, name: "Seyyid Muhammad Bin Shariff Said Al-Beidh" , img:islam11},
     {id:2, name: "Al-Allamah Usthadh Harith Swaleh Al-Maa'wy" , img:islam12},
     {id:3, name: "Seyyid Swaleh Sheikh Bahssan Jamalul Layl" , img:UserImage},
-    {id:4, name: "Seyyid Swaleh Al-Arif Bin Seyyid Muhammad Al-Beidh" , img:UserImage},
+    {id:4, name: "Seyyid Swaleh Al-Arif Bin Seyyid Muhammad Al-Beidh" , img:islam3},
     {id:5, name: "Usthadh Said Ali Hassan" , img:UserImage},
     {id:6, name: "Usthadh Salim Omar Dima" , img:UserImage},
     {id:7, name: "Usthadh Ali Bin Muhammad Bin Abubakar" , img:UserImage},

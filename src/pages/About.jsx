@@ -8,6 +8,7 @@ import islam9 from "../assets/islam9.jpg"
 import islam10 from "../assets/islam10.jpg"
 import islam11 from "../assets/islam11.jpg"
 import islam12 from "../assets/islam12.jpg"
+import islam13 from "../assets/islam13.jpg"
 import { Helmet } from 'react-helmet'
 
 const About = () => {
@@ -26,7 +27,7 @@ const About = () => {
     {id:11, name: "Al-Akh Ramadhan Ali Muhani An-Nabahani" , img:UserImage},
     {id:12, name: "Seyyid Muhammad Swibty Khatwab An-Nadhiri" , img:islam8},
     {id:13, name: "Sheikha Ummu Al-Muhajir Shazmin Ahmed" , img:UserImage},
-    {id:14, name: "Seyyid Muhammad Baqir bin Mwenye Muadham Al-Rudainy" , img:UserImage},
+    {id:14, name: "Seyyid Muhammad Baqir bin Mwenye Muadham Al-Rudainy" , img:islam13},
     {id:15, name: "Dr Sheikh Mbarak Ahmed Aweis" , img:islam9},
     {id:16, name: "Seyyid Usthadh Jaffar Bin Seyyid Muhammad bin Seyyid Shariff Said Al-Beidh" , img:islam10},
   ]

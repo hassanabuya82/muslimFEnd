@@ -54,7 +54,7 @@ const BlogPage = () => {
           blogsData.data.results.map((blog) => (
             <>
             <Helmet>
-              <title>{blog.title}</title>
+              <title>East Africa Muslim Scholars</title>
               <meta name='description' content={blog.category_name}/>
             </Helmet>
             <Link to={`/blogs/${blog.id}`} key={blog.id} className="block p-5 shadow-lg rounded cursor-pointer">

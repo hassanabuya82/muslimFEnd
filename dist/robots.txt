@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Allow: /blogs
+Allow: /about
+Allow: /contact

@@ -19,7 +19,7 @@ const SingleBlog = () => {
   const blogId = params.blogId;
   const text = "Check this blog out";
 
-  const blogUrl = `https://muslim-psi.vercel.app/blogs/${blogId}`; // Replace with your actual blog URL
+  const blogUrl = `https://eamuslimscholars.com/blogs/${blogId}`; // Replace with your actual blog URL
 
   const shareOnFacebook = () => {
     const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(blogUrl)}`;

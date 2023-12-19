@@ -37,6 +37,19 @@ export const fetchingLatestBlogs = async () => {
 };
 
   
+
+  
+export const fetchingMostLiked = async () => {
+  const token = get_token();
+  const res = await axios.get(`${api_url}blogs/most_liked/`, {
+    headers: {
+      Authorization: `Token ${token}`,
+    },
+  });
+  return res.data;
+};
+
+  
 export const fetchingCategories = async () => {
   const token = get_token();
   const res = await axios.get(`${api_url}blogs/categories/`, {

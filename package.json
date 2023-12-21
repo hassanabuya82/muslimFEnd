@@ -5,6 +5,7 @@
   "type": "module",
   "reactSnap": {
     "inlineCss": true,
+    "puppeteerArgs": ["--no-sandbox"],
     "source": "dist"
   },
   "scripts": {

@@ -3,10 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "reactSnap": {
-    "inlineCss": true,
-    "source": "dist"
-  },
+  
   "scripts": {
     "dev": "vite",
     "build": "vite build",

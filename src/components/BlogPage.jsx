@@ -105,14 +105,6 @@ const BlogPage = () => {
             <FullPageCardLoader />
           ) : (
             blogsData.data &&
-            
-            
-            // <Pagination
-            //     currentPage={currentPage}
-            //     onPageChange={handlePageChange}
-            //     blogs={blogsData.data.results}
-            //     pageSize={pageSize}
-            // />
             <Pagination
             pageSize={pageSize}
                 currentPage={currentPage}

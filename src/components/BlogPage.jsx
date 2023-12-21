@@ -52,7 +52,7 @@ const BlogPage = () => {
     <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8'>
         {
           blogsData.data.results.map((blog) => (
-            <>
+            <div key={blog.id}>
             <Helmet>
               <title>East Africa Muslim Scholars</title>
               <meta name='description' content={blog.category_name}/>
@@ -67,27 +67,27 @@ const BlogPage = () => {
                 <p className='text-sm text-gray-500'>Published: {moment(blog.created_on).format("YYYY-MM-DD hh:mm A")}</p>
                 
                   <div className="flex flex-wrap items-center">
-                  <p className='text-gray-500 mt-3 text-3xl flex flex-wrap items-center mr-3'>
-                  <div>
-                    <FaRegHeart className="mr-2 text-red-500"/>  
-                  </div> 
-                  <div className="text-lg">
-                  {blog.like_count ? blog.like_count : 0}
-                  </div>
-                </p>
+                  <div className='text-gray-500 mt-3 text-3xl flex flex-wrap items-center mr-3'>
+                    <div>
+                      <FaRegHeart className="mr-2 text-red-500"/>  
+                    </div> 
+                    <div className="text-lg">
+                    {blog.like_count ? blog.like_count : 0}
+                    </div>
+                </div>
                 
-                <p className='text-gray-500 mt-3 text-3xl flex flex-wrap items-center'>
+                <div className='text-gray-500 mt-3 text-3xl flex flex-wrap items-center'>
                   <div>
                     <FaRegComment className="mr-2"/>  
                   </div> 
                   <div className="text-lg">
                     {blog.comment_count ? blog.comment_count : 0}
                   </div>
-                </p>
+                </div>
                   </div>
 
             </Link>
-            </>
+            </div>
         ))  
         }
     </div>

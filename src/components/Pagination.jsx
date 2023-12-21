@@ -20,7 +20,7 @@ const Pagination = ({ currentPage, onPageChange, totalPages, pageSize }) => {
                 <button onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1} className={`border p-3 border-orange-300 rounded-md ${currentPage === 1 ?'' : 'hover:bg-orange-600 hover:text-white hover:font-bold'} `}>Previous</button>
             </li>
 
-            <div className="flex gap-1">{renderPaginationLinks()}</div>
+            <div className="flex gap-1"><ul>{renderPaginationLinks()}</ul></div>
 
             <li>
                 <button onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === alltotalPages} className={`border p-3 border-orange-300 rounded-md ${currentPage === alltotalPages ?'' : 'hover:bg-orange-600 hover:text-white hover:font-bold'} `}>Next</button>

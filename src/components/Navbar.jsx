@@ -40,7 +40,7 @@ const Navbar = () => {
                 <NavLink
                   to={path}
                   className="text-white hover:text-yellow-500 transition duration-300"
-                  activeClassName="font-bold"
+                  activeclassname="font-bold"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link}
@@ -49,9 +49,9 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="flex items-center space-x-4 lg:ml-auto text-2xl">
-            <FaFacebook className="text-white hover:text-orange-300 cursor-pointer" />
-            <FaInstagram className="text-white hover:text-orange-300 cursor-pointer" />
-            <FaTwitter className="text-white hover:text-orange-300 cursor-pointer" />
+            <FaFacebook className="text-white hover:text-orange-300 cursor-pointer" aria-label="Facebook"/>
+            <FaInstagram className="text-white hover:text-orange-300 cursor-pointer" aria-label="Instagram"/>
+            <FaTwitter className="text-white hover:text-orange-300 cursor-pointer" aria-label="twitter"/>
           </div>
         </div>
       </nav>
@@ -63,7 +63,7 @@ const Navbar = () => {
                 <NavLink
                   to={path}
                   className="hover:text-yellow-500 transition duration-300"
-                  activeClassName="font-bold"
+                  activeclassname="font-bold"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link}
@@ -71,9 +71,9 @@ const Navbar = () => {
               </li>
             ))}
             <div className="flex justify-center space-x-4 py-4 text-2xl">
-              <FaFacebook className="text-white hover:text-orange-300 cursor-pointer" />
-              <FaInstagram className="text-white hover:text-orange-300 cursor-pointer" />
-              <FaTwitter className="text-white hover:text-orange-300 cursor-pointer" />
+            <FaFacebook className="text-white hover:text-orange-300 cursor-pointer" aria-label="Facebook"/>
+            <FaInstagram className="text-white hover:text-orange-300 cursor-pointer" aria-label="Instagram"/>
+            <FaTwitter className="text-white hover:text-orange-300 cursor-pointer" aria-label="twitter"/>
             </div>
           </ul>
         </div>

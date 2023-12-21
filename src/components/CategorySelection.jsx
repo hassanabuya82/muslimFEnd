@@ -11,7 +11,7 @@ const CategorySelection = ({ onSelectCategory, activeCategory }) => {
 
     return (
         <div className="px-4 mb-8 lg:space-x-16 gap-12 flex flex-wrap items-center border-b-2 py-5 text-gray-900 font-semibold">
-            <button onClick={() => onSelectCategory(null)} className={`lg:ml-12 ${activeCategory ? '' : 'active-button'}`}>All</button>
+            <button onClick={() => onSelectCategory(null)} className={`lg:ml-12 p-1 rounded-md border  ${activeCategory ? '' : 'active-button'}`}>All</button>
             
             {categories.isLoading ? (
             <GrayLoaderMini />

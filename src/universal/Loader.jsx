@@ -204,11 +204,20 @@ export const FullPageCardLoader = ({card_count=4}) => {
 return (
   <div className="w-full flex flex-wrap">
      {
-      array_count.map(x=>
+      array_count.map((x, index)=>
           
-          <div className="w-full lg:w-1/4 p-2" key={x}>
-          <CardBlockLoader />
-      </div>
+          <div className="w-full lg:w-1/4 p-2" key={index}>
+            <div className="shadow w-full py-4 px-3 my-2 text-gray-600 rounded-lg bg-gray-50 animate-pulse">
+              <div className="flex justify-between text-sm">
+                <p className="bg-gray-200 animate-pulse h-6 w-24 rounded"></p>
+                <p className="bg-gray-200 animate-pulse h-6 w-10 rounded"></p>
+              </div>
+
+              <div className="flex justify-between text-sm my-3">
+                <p className="bg-gray-200 animate-pulse h-6 w-36 rounded"></p>
+              </div>
+            </div>
+          </div>
           )
      }       
   </div>
@@ -225,11 +234,17 @@ export const FullPageBlogCardLoader = ({card_count=12}) => {
 return (
   <div className="w-full flex flex-wrap">
      {
-      array_count.map(x=>
-          
-          <div className="w-full lg:w-1/4 p-2" key={x}>
-          <BlogCardLoader />
-      </div>
+      array_count.map((x, index) =>  
+        <div className="w-full lg:w-1/4 p-2" key={index}>
+          <div className="block p-5 shadow-lg rounded animate-pulse">
+            <div className="aspect-w-16 aspect-h-9 h-32 rounded-md bg-gray-200"></div>
+            {/* <h3 className="mt-4 mb-2 font-bold bg-gray-200 h-6 w-5/6 rounded"></h3> */}
+            <p className="mb-2 mt-3">
+              <span className="font-bold bg-gray-200 h-4 w-16 rounded inline-block"></span>
+            </p>
+            <p className="text-sm text-gray-500 bg-gray-200 h-4 w-32 rounded"></p>
+          </div>
+        </div>
           )
      }       
   </div>

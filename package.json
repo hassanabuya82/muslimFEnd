@@ -4,15 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "/",
-  "reactSnap": {
-    "inlineCss": true,
-    "puppeteerArgs": ["--no-sandbox"],
-    "source": "dist"
-  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "react-snap",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
